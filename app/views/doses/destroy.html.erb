@@ -1,0 +1,13 @@
+<h1>Which cocktail to destroy </h1>
+
+<ol>
+  <% @cocktails.each do |i| %>
+    <li><%= i.name %></li>  
+  <% end %>
+</ol>
+
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :dose_to_destroy %>
+  <%= f.association :ingredient %>
+<% end %>

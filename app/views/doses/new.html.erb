@@ -8,6 +8,6 @@
   <%= f.input :description %>
   <%= f.association :ingredient %>
   <%# if it is associated, simple form will display to you %>
-  <%= f.association :cocktail %> 
+  <%# i do not need to associate cocktail since i already stated the cocktail before i get to doses %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
