@@ -3,5 +3,11 @@
 
 <h1>Details of specific cocktail </h1>
 
-<%= @cocktails.name %>
-
+<%= @cocktail.name %>
+<% doses = @cocktail.doses %>
+<% doses.each do |dose| %>
+  <li><%= dose.description %>
+  <%= dose.ingredient.name %></li>
+  <%= link_to "create dose for cocktail", new_cocktail_dose_path(@cocktail) %>
+  <%= link_to "delete", dose_path(dose), method: 'delete' %>
+<% end %>

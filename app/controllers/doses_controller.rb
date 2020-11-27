@@ -9,9 +9,10 @@ class DosesController < ApplicationController
     @dose = Dose.new(doses_params) # dose params take data from the form in create
     @cocktail = Cocktail.find(params[:cocktail_id]) # this finds the cocktail instance via id
     @dose.cocktail = @cocktail # saves the cocktail instance inside dose
-    @dose.save
 
     if @dose.save
+      redirect_to cocktail_path(@cocktail)
+
     else
       # borrowing the new page and showing it
       render :new
@@ -19,9 +20,10 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @dose = dose.find(params[:id])
+    @dose = Dose.find(params[:id]) # dose id, seperate from cocktail id
     @dose.destroy
-    redirect_to cocktails_path()
+
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   private
