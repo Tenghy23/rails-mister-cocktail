@@ -1,21 +1,26 @@
-<h1>Cocktail#show</h1>
-<p>Find me in app/views/cocktail/show.html.erb</p>
-
-<h1>Details of specific cocktail </h1>
-
-<div>
-  <%= link_to "Home??", cocktails_path(@cocktails) %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dn1ywf2d5/image/upload/v1606465187/cocktail%20rails%20proj/cocktail_banner_hsro47.jpg)">
+  <p>Our cocktail</p>
 </div>
 
 <div>
-  <%= @cocktail.name %>
-  <%= link_to "create dose for cocktail", new_cocktail_dose_path(@cocktail) %>
+  <a class="btn btn-primary" href="<%= cocktails_path(@cocktails) %>">Home</a>
 </div>
 
-<ul><% @cocktail.doses.each do |dose| %>
-  <li><%= dose.description %>
-  <%= dose.ingredient.name %></li>
-  <%= link_to "delete", dose_path(dose), method: 'delete' %>
-<% end %></ul>
+<% @cocktail.doses.each do |dose| %>
+  <div class="card-product">
+    <img src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview" />
+    <div class="card-product-infos">
+      <h2><%= @cocktail.name %></h2>
+        <li><%= dose.description %>
+        <%= dose.ingredient.name %></li>
+        <%= link_to "Remove", dose_path(dose), method: 'delete' %>
+      <a class="btn btn-primary" href="<%= new_cocktail_dose_path(@cocktail) %>">Create Dose</a>
+    </div>
+  </div>
+<% end %>
+
+
+
+
 
   

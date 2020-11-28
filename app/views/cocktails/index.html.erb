@@ -1,10 +1,19 @@
-<h1>Cocktail#index</h1>
-<p>Find me in app/views/cocktail/index.html.erb</p>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dn1ywf2d5/image/upload/v1606465187/cocktail%20rails%20proj/cocktail_banner_hsro47.jpg)">
+  <p>Our Collection</p>
+</div>
 
-<ol>
+<div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>  
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg/preview" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
   <% end %>
-</ol>
+</div>
+
+
 
 <%= link_to 'Create new cocktail?', new_cocktail_path(@cocktail) %>
