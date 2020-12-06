@@ -55,40 +55,58 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 100%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  max-width: 700px;
+  max-width: 1200px;
   margin-left: 20px;
+  border-radius: 8px;
+  border-style: none;
+  flex-grow: 1;
+
+  .card-product-infos {
+    padding: 0 16px;
+  }
+
+  .row {
+    align-items: center;
+
+    .row-desc {
+      flex-direction: column;
+      margin-left: 20px;
+    }
+  }
+
+  .card-product img {
+    height: 100%;
+    width: 160px;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .btn-primary {
+    margin-left: 20px;
+  }
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
 
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  margin-top: 10px;
-}
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
 
-.btn-primary {
-  margin-left: 20px;
-}

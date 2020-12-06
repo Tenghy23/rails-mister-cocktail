@@ -13,7 +13,6 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -23,6 +22,7 @@ class CocktailsController < ApplicationController
 
   private
 
+  # private methods are required to authenticate params being passed over from view files
   def cocktail_params
     params.require(:cocktail).permit(:name)
   end

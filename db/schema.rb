@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 2020_11_27_020122) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  # If changes are required in schema, create/edit/db:migrate the migration file
+  # Never edit schema directly. Only changes in latest migration will be accepted in schema.
+
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_020122) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "ingredient_id"
     t.bigint "cocktail_id"
-    t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
+    t.index ["cocktail_id"], name: "index_doses_on_cocktail_id" # If Dose has a foreign id, it contains an instance of it
     t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
   end
 
